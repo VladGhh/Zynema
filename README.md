@@ -1,0 +1,2 @@
+# Zynema
+proiect tehnici web

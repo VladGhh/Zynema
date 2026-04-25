@@ -1,0 +1,11 @@
+.text-icon {
+    display: none;
+}
+
+nav {
+    --latime-buton: 60px;
+}
+
+.imag-icon {
+    font-size: 1.5rem;
+}

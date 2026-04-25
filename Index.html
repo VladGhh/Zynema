@@ -9,28 +9,70 @@
     <meta name="msapplication-TileColor" content="#E50914">
     <title>Zynema - Filme, Seriale și Recenzii</title>
     
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+
     <link rel="stylesheet" href="resurse/css/general.css" type="text/css">
-    <link rel="icon" type="image/png" href="resurse/ico/favicon-96x96.png" sizes="96x96">
-    <link rel="icon" type="image/svg+xml" href="resurse/ico/favicon.svg">
-    <link rel="shortcut icon" href="resurse/ico/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="resurse/ico/apple-touch-icon.png">
-    <link rel="manifest" href="resurse/ico/site.webmanifest">
+    <link rel="stylesheet" href="resurse/css/nav_compilat.css" type="text/css">
+    <link rel="stylesheet" media="print" href="resurse/css/printare.css" type="text/css">
+
+    <link rel="icon" type="image/png" href="./resurse/ico/favicon-96x96.png?v=1" sizes="96x96">
+    <link rel="icon" type="image/svg+xml" href="./resurse/ico/favicon.svg?v=1">
+    <link rel="shortcut icon" href="./resurse/ico/favicon.ico?v=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/ico/apple-touch-icon.png?v=1">
+    <link rel="manifest" href="./resurse/ico/site.webmanifest?v=1">
+
+    
 </head>
 <body id="sus">
-    <header>
+    <div id="watermark-print">
+    Vlad<br>Gherghel
+</div>
+   <header>
         <h1>Zynema</h1>
+        
         <nav>
-            <ul>
+            <label id="hamburger" for="ch-menu">
+                <i class="fa-solid fa-bars" style="color: var(--culoare-accent); font-size: 2rem;"></i>
+            </label>
+            <input type="checkbox" id="ch-menu">
+            
+            <ul class="meniu">
                 <li>
-                    <a href="#sus">Acasă</a>
-                    <ul>
+                    <a href="#sus">
+                        <span class="imag-icon"><i class="fa-solid fa-house"></i></span>
+                        <span class="text-icon">Acasă</span>
+                    </a>
+                    <ul class="submeniu">
                         <li><a href="#zona-1">Prezentare</a></li>
                         <li><a href="#zona-3">Evenimente</a></li>
                     </ul>
                 </li>
-                <li><a href="#zona-2">Lansări</a></li>
-                <li><a href="https://www.imdb.com" target="_blank">IMDB</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#zona-2">
+                        <span class="imag-icon"><i class="fa-solid fa-film"></i></span>
+                        <span class="text-icon">Lansări</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="imag-icon"><i class="fa-solid fa-clapperboard"></i></span>
+                        <span class="text-icon">Recenzii</span>
+                    </a>
+                    <ul class="submeniu">
+                        <li><a href="arhiva.html">Arhiva Veche</a></li>
+                        <li><a href="top10.html">Top 10 Filme</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#contact">
+                        <span class="imag-icon"><i class="fa-solid fa-envelope"></i></span>
+                        <span class="text-icon">Contact</span>
+                    </a>
+                </li>
             </ul>
         </nav>
     </header>
@@ -53,11 +95,15 @@
                 </article>
                 <p>Istoria peliculei explicată: <a href="https://ro.wikipedia.org/wiki/Cinematografie#Istoria_și_evoluția_tehnologică">https://ro.wikipedia.org<wbr>/wiki<wbr>/Cinematografie<wbr>#Istoria</a></p>
                 
-                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
-                    <mi>Z</mi><mo>=</mo>
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="formula-stilizata">
+                    <mi class="math-z">Z</mi><mo class="math-op">=</mo>
                     <mfrac>
-                        <mrow><msub><mi>n</mi><mn>1</mn></msub><mo>+</mo><msub><mi>n</mi><mn>2</mn></msub></mrow>
-                        <mn>2</mn>
+                        <mrow>
+                            <msub><mi class="math-n">n</mi><mn class="math-idx">1</mn></msub>
+                            <mo class="math-plus">+</mo>
+                            <msub><mi class="math-n">n</mi><mn class="math-idx">2</mn></msub>
+                        </mrow>
+                        <mn class="math-num">2</mn>
                     </mfrac>
                 </math>
             </section>
@@ -129,14 +175,12 @@
                     <figcaption>Sala VIP Zynema, pregătită pentru proiecția de gală.</figcaption>
                 </figure>
                 <p>Bilete vândute pentru Noaptea Nolan: <meter min="0" max="100" low="30" high="90" optimum="50" value="95">95%</meter></p>
-                
             </section>
 
             <section id="zona-4" class="grid-item">
                 <h2>Știri de pe Platourile de Filmare</h2>
                 <p><time datetime="2026-03-15">15 Martie 2026</time> Denis Villeneuve confirmă oficial începerea pre-producției pentru adaptarea "Rendezvous with Rama".</p>
                 <p><time datetime="2026-02-28">28 Februarie 2026</time> <strong>Festivalul de la Cannes dezvăluie selecția oficială!</strong> Marii absenți ai anului au șocat criticii europeni.</p>
-               
             </section>
 
             <section id="zona-5" class="grid-item">
@@ -186,17 +230,20 @@
                     <summary>Unde pot sugera un film pentru "Noaptea Nolan"?</summary>
                     <p>Avem un canal dedicat pe serverul nostru de Discord, disponibil pentru membrii Premium.</p>
                 </details>
-               
             </section>
 
             <section id="zona-8" class="grid-item">
                 <h2>Multimedia & Teasere</h2>
-                <div class="container-iframe">
-                    <div class="taburi-iframe">
-                    <a href="https://www.youtube.com/embed/ulVSOghY-ns" target="ifr-video">Interviu Regizor</a>
-        <a href="https://www.youtube.com/embed/BmtceCYFpGo" target="ifr-video">Behind the Scenes</a>
-        <a href="https://www.youtube.com/embed/8Qn_spdM5Zg" target="ifr-video">Teaser Oficial</a> </div>
-                    <iframe name="ifr-video" width="100%" height="315" src="https://www.youtube.com/embed/8Qn_spdM5Zg" title="Player Video Principal" allowfullscreen></iframe>
+                
+                <div id="stilizare-taburi">
+                    <nav class="tab-nav">
+                        <a href="https://www.youtube.com/embed/ulVSOghY-ns" target="ifr-video" class="tab-link">Interviu Regizor</a>
+                        <a href="https://www.youtube.com/embed/BmtceCYFpGo" target="ifr-video" class="tab-link">Behind the Scenes</a>
+                        <a href="https://www.youtube.com/embed/8Qn_spdM5Zg" target="ifr-video" class="tab-link">Teaser Oficial</a> 
+                    </nav>
+                    <div class="iframe-wrapper">
+                        <iframe name="ifr-video" src="https://www.youtube.com/embed/8Qn_spdM5Zg" title="Player Video Principal" allowfullscreen></iframe>
+                    </div>
                 </div>
                 
                 <div class="galerie-postere">
@@ -216,16 +263,18 @@
                         </a>
                     </div>
                 </div>
-                
             </section>
 
         </div>
     </main>
 
     <footer id="contact">
+       
+    <p id="banner-print">Acesta este un proiect școlar!</p>
+  
         <address>
             Biroul Redacției Zynema:<br>
-            Linie directă: <a href="tel:+40712345678">0712 345 678</a><br>
+            Linie directă: <i class="fa-solid fa-phone" style="color: var(--culoare-accent); margin-right: 5px;"></i> <a href="tel:+40712345678">0712 345 678</a><br>
             Acreditări presă: <a href="mailto:press@zynema.ro">press@zynema.ro</a><br>
             <a href="https://wa.me/40712345678">Contact rapid prin WhatsApp</a><br><br>
             Sediul Central:<br>
@@ -233,7 +282,7 @@
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.843657319688!2d26.09745321552391!3d44.43588297910243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40b1ff471e4eb173%3A0x6b1db9bb07f87f2!2sFacultatea%20de%20Matematic%C3%A3%20%C8%99i%20Informatic%C3%A3!5e0!3m2!1sro!2sro!4v1680000000000!5m2!1sro!2sro" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </address>
         <p>
-            <small>© Zynema. Platformă independentă de critică de film. Pagină generată la <time datetime="2026-03-19">19 martie 2026</time>.</small>
+            <small>Creat cu pasiune pentru cinema <i class="fa-solid fa-film fa-beat" style="color: var(--culoare-accent);"></i> de Zynema. Pagină generată la <time datetime="2026-03-19">19 martie 2026</time>.</small>
         </p>
     </footer>
 

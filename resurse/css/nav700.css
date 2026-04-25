@@ -1,0 +1,46 @@
+#hamburger {
+    display: block;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+ul.meniu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+}
+
+#ch-menu:checked + ul.meniu {
+    display: flex;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--culoare-secundara);
+    border-bottom: 3px solid var(--culoare-accent);
+    z-index: 100;
+}
+
+ul.meniu li {
+    width: 100%;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--culoare-border);
+}
+
+ul.meniu ul {
+    width: 100%;
+}
+
+.text-icon {
+    display: none ;
+    margin-left: 10px;
+}
+
+ul.meniu > li:hover ul {
+    position: relative;
+    left: 0;
+    transform: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}

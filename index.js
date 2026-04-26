@@ -16,6 +16,7 @@ obGlobal={
     folderBackup: path.join(__dirname, "backup"),
 }
 
+
 console.log("Folder index.js", __dirname);
 console.log("Folder curent (de lucru)", process.cwd());
 console.log("Cale fisier", __filename);
@@ -31,7 +32,57 @@ for (let folder of vect_foldere){
         fs.mkdirSync(path.join(caleFolder), {recursive:true});   
     }
 }
+function compileazaScss(caleScss, caleCss) {
+    if (!caleCss) {
+        let numeFis = path.basename(caleScss, ".scss");
+        caleCss = numeFis + ".css";
+    }
 
+    if (!path.isAbsolute(caleScss)) caleScss = path.join(obGlobal.folderScss, caleScss);
+    if (!path.isAbsolute(caleCss)) caleCss = path.join(obGlobal.folderCss, caleCss);
+
+    let folderBackupCss = path.join(obGlobal.folderBackup, "resurse/css");
+    if (!fs.existsSync(folderBackupCss)) {
+        fs.mkdirSync(folderBackupCss, { recursive: true });
+    }
+
+    if (fs.existsSync(caleCss)) {
+        try {
+            let numeFisCss = path.basename(caleCss);
+            fs.copyFileSync(caleCss, path.join(folderBackupCss, numeFisCss));
+        } catch (eroare) {
+            console.error(eroare);
+        }
+    }
+
+    try {
+        let rezultat = sass.compile(caleScss);
+        fs.writeFileSync(caleCss, rezultat.css);
+    } catch (err) {
+        console.error(err.message);
+    }
+}
+
+
+if (fs.existsSync(obGlobal.folderScss)) {
+    
+    let fisiereScss = fs.readdirSync(obGlobal.folderScss);
+    for (let fis of fisiereScss) {
+        if (path.extname(fis) === ".scss") {
+            compileazaScss(fis, fis.replace(".scss", ".css")); 
+        }
+    }
+
+    
+    fs.watch(obGlobal.folderScss, function(eveniment, numeFis) {
+        if (eveniment === "change" || eveniment === "rename") {
+            let caleCompletaScss = path.join(obGlobal.folderScss, numeFis);
+            if (fs.existsSync(caleCompletaScss) && path.extname(numeFis) === ".scss") {
+                compileazaScss(numeFis, numeFis.replace(".scss", ".css"));
+            }
+        }
+    });
+}
 app.get(["/","/index","/home"], function(req, res){
     res.render("pagini/index",{
         ip:req.ip
@@ -40,7 +91,7 @@ app.get(["/","/index","/home"], function(req, res){
 
 app.use("/resurse", express.static(path.join(__dirname, "resurse")));
 app.get("/favicon.ico", function(req, res){
-    res.sendFile(path.join(__dirname,"resurse/imagini/favicon/favicon.ico"))
+    res.sendFile(path.join(__dirname,"resurse/ico/favicon.ico"))
 });
 
 function initErori(){

@@ -1,6 +1,3 @@
-#watermark-print, #banner-print {
-    display: none;
-}
 
 @media print {
     * {

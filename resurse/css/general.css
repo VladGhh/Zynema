@@ -1,4 +1,7 @@
 :root {
+    --culoare-vizitat: #9b59b6;
+    --culoare-simbol-hover: #e74c3c;
+    --culoare-pata: rgba(229, 9, 20, 0.3);
     --culoare-border-tabel1: #8b5cf6;
     --culoare-border-tabel2: #ec4899;
     --culoare-transparenta-hover: rgba(229, 9, 20, 0.7);
@@ -31,6 +34,10 @@ p, li, td, th, a, summary, div, dd, dt { font-size: 1rem; }
 
 a { color: var(--culoare-accent); text-decoration: none; transition: color 0.3s ease; }
 a:hover { color: #ff3b44; text-decoration: underline; }
+
+#watermark-print, #banner-print {
+    display: none;
+}
 
 header {
     background-color: var(--culoare-header);
@@ -125,6 +132,67 @@ meter { width: 100%; max-width: 300px; height: 20px; border-radius: 10px; overfl
 figure { margin: 20px 0; text-align: center; }
 figure img { max-width: 100%; height: auto; border: 2px solid var(--culoare-border); border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.5); }
 object { border: 2px solid var(--culoare-border); margin: 20px 0; border-radius: 8px; }
+
+a:visited { color:var(--culoare-vizitat); }
+a[href^="http"]::before {
+    content: "⮳ ";
+    font-size: 1.5em; 
+    display: inline-block;
+    transition: color 0.3s ease; 
+}
+
+a[href^="http"]:hover::before {
+    color: var(--culoare-simbol-hover);
+}
+
+main a {
+   
+    display: inline-block; 
+    padding: 5px 10px; 
+    background-image: radial-gradient(
+        ellipse, 
+        rgba(229, 9, 20, 0.4) 0%,  
+        rgba(229, 9, 20, 0.4) 40%, 
+        transparent 80%, 
+        transparent 100%
+    );
+    
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 0% 0%; 
+    transition: background-size 0.4s ease;
+    border: 1px solid transparent; 
+}
+
+main a:hover {
+    background-size: 100% 100%; 
+}
+
+main a:active {
+    border: 1px solid black; 
+}
+
+.video-prezentare {
+    display: block;
+    margin: 30px auto; 
+    width: 80%; 
+    min-width: 320px; 
+    max-width: 900px; 
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5); 
+}
+
+
+video::cue {
+    
+    font-size: 1.2rem;
+    font-weight: bold;
+    background-image: linear-gradient(to right, #ffffff, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    background-color: transparent; 
+}
 
 @media screen and (max-width: 1200px) {
     html { font-size: 14px; }

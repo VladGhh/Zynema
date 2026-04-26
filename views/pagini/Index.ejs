@@ -1,0 +1,218 @@
+﻿<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <title>Zynema - Filme, Seriale și Recenzii</title>
+    <meta name="description" content="Zynema - Catalog pentru recenzii filme, seriale și noutăți din cinema.">
+    <meta name="keywords" content="recenzii filme, seriale, cinema, top filme, Zynema">
+   <%- include("../fragmente/head") %>
+      
+</head>
+<body id="sus">
+    <div id="watermark-print">
+    Vlad<br>Gherghel
+</div>
+  <%- include("../fragmente/header") %>
+    <main>
+        <div id="grid-pagina">
+            
+            <section id="zona-1" class="grid-item">
+                <hgroup>
+                    <h2>Bun venit în universul Zynema</h2>
+                    <p>Sanctuarul cinefililor și al analizelor aprofundate</p>
+                    <p>Arunca un ochi la arhiva noastra de genuri: <a href="#zona-5">Chiar Aici</a></p>
+                </hgroup>
+                <p>IP <%- locals.ip %></p> 
+                <article>
+                    <h3>Manifestul Nostru</h3>
+                    <p>Pe platforma <b>Zynema</b> nu ne mulțumim doar cu simple impresii; disecăm cele mai noi <b>recenzii filme</b> și dezbatem <b>seriale</b> care redefinesc televiziunea modernă.</p>
+                    <p>Algoritmul nostru unic de evaluare este <dfn id="def-rating">Z-Score</dfn>, o metrică ce filtrează recenziile false.</p>
+                    <p><strong>Atenție! Analizele noastre conțin spoilere majore pentru intriga filmelor.</strong></p>
+                    <p>Suntem obsedați de capodoperele <i>neo-noir</i> și de cinematografia <i>avant-garde</i>. Recunoaștem, uneori suntem <em>exagerat</em> de pretențioși. Scorul acordat inițial ultimului blockbuster a fost <s>nedrept de mic</s>, dar acum a fost <ins>revizuit obiectiv</ins>.</p>
+                    <p>Astăzi, departamentele de <abbr title="Computer Generated Imagery">CGI</abbr> fac minuni, dar nu uitați regula de aur a lui Kubrick: <q>Filmul se naște și moare la masa de montaj.</q> Mai multe secrete ale regizorilor în <cite>Arta Cinematografiei</cite>.</p>
+                </article>
+                <p>Istoria peliculei explicată: <a href="https://ro.wikipedia.org/wiki/Cinematografie#Istoria_și_evoluția_tehnologică">https://ro.wikipedia.org<wbr>/wiki<wbr>/Cinematografie<wbr>#Istoria</a></p>
+                
+                <math xmlns="http://www.w3.org/1998/Math/MathML" display="block" class="formula-stilizata">
+                    <mi class="math-z">Z</mi><mo class="math-op">=</mo>
+                    <mfrac>
+                        <mrow>
+                            <msub><mi class="math-n">n</mi><mn class="math-idx">1</mn></msub>
+                            <mo class="math-plus">+</mo>
+                            <msub><mi class="math-n">n</mi><mn class="math-idx">2</mn></msub>
+                        </mrow>
+                        <mn class="math-num">2</mn>
+                    </mfrac>
+                </math>
+            </section>
+
+            <section id="zona-2" class="grid-item">
+                <h2>Box Office & Bugete 2026</h2>
+                <div class="table-container">
+                    <table>
+                        <caption>Mega-producțiile anului și investițiile studiourilor</caption>
+                        <thead>
+                            <tr>
+                                <th>Titlu Peliculă</th>
+                                <th>Genul Principal</th>
+                                <th>Fereastră Lansare</th>
+                                <th>Buget Estimat</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Neon Genesis: Live Action</td>
+                                <td>Sci-Fi / Mecha</td>
+                                <td>Aprilie 2026</td>
+                                <td>$210M</td>
+                            </tr>
+                            <tr>
+                                <td>Ecouri din Adâncuri - Partea I</td>
+                                <td>Thriller Psihologic</td>
+                                <td>Mai 2026</td>
+                                <td rowspan="2">$150M (Filmate simultan)</td>
+                            </tr>
+                            <tr>
+                                <td>Ecouri din Adâncuri - Partea II</td>
+                                <td>Thriller Psihologic</td>
+                                <td>August 2026</td>
+                            </tr>
+                            <tr>
+                                <td>Odiseea Spațială: Reboot</td>
+                                <td colspan="2">Amânat pentru refacere efecte vizuale</td>
+                                <td>$90M</td>
+                            </tr>
+                            <tr>
+                                <td>Umbrele Viitorului</td>
+                                <td>Neo-Noir / Crime</td>
+                                <td>Decembrie 2026</td>
+                                <td>$120M</td>
+                            </tr>
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <td colspan="4">Datele sunt extrase din rapoartele financiare publice ale studiourilor.</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </section>
+
+            <section id="zona-3" class="grid-item">
+                <h2>Calendarul Comunității</h2>
+                <ol>
+                    <li><time datetime="2026-05-15T21:00">15 Mai, 21:00</time> - <b>Noaptea Nolan</b>. Vizionăm Interstellar și Inception în format IMAX 70mm.</li>
+                    <li><time datetime="2026-06-20T19:00">20 Iunie, 19:00</time> - <b>Gala Zynema Awards</b>. Decernăm premiile criticilor independenți.</li>
+                </ol>
+                <figure>
+                    <picture>
+                        <source media="(max-width: 600px)" srcset="/resurse/imagini/imax.jpg">
+                        <source media="(max-width: 1000px)" srcset="/resurse/imagini/imax.jpg">
+                        <img src="/resurse/imagini/imax.jpg" alt="Interiorul Sălii IMAX Zynema" title="Ecranul nostru de proiecție flagship">
+                    </picture>
+                    <figcaption>Sala VIP Zynema, pregătită pentru proiecția de gală.</figcaption>
+                </figure>
+                <p>Bilete vândute pentru Noaptea Nolan: <meter min="0" max="100" low="30" high="90" optimum="50" value="95">95%</meter></p>
+            </section>
+
+            <section id="zona-4" class="grid-item">
+                <h2>Știri de pe Platourile de Filmare</h2>
+                <p><time datetime="2026-03-15">15 Martie 2026</time> Denis Villeneuve confirmă oficial începerea pre-producției pentru adaptarea "Rendezvous with Rama".</p>
+                <p><time datetime="2026-02-28">28 Februarie 2026</time> <strong>Festivalul de la Cannes dezvăluie selecția oficială!</strong> Marii absenți ai anului au șocat criticii europeni.</p>
+            </section>
+
+            <section id="zona-5" class="grid-item">
+                <h2>Arhiva de Genuri</h2>
+                <section>
+                    <h3>Mind-Bending Thrillers</h3>
+                    <ul>
+                        <li>Shutter Island (Ediția Remasterizată 4K)</li>
+                        <li>Se7en (Comentariul Regizorului)</li>
+                        <li>Memento</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Hidden Gems (Cinematografie Indie)</h3>
+                    <ul>
+                        <li>Past Lives</li>
+                        <li>Perfect Days</li>
+                        <li>The Florida Project</li>
+                    </ul>
+                </section>
+            </section>
+
+            <section id="zona-6" class="grid-item">
+                <h2>Alegerea Redacției</h2>
+                <article>
+                    <h3>Recenzia Săptămânii: Dune Messiah</h3>
+                    <p>O capodoperă vizuală absolută. Hans Zimmer se autodepășește, iar cinematografia semnată de Greig Fraser transformă fiecare cadru într-un tablou. Z-Score: <ins>9.8/10</ins>.</p>
+                </article>
+                <article>
+                    <h3>Pachete Premium Zynema</h3>
+                    <dl>
+                        <dt>Abonamentul "Auteur"</dt>
+                        <dd>Acces nelimitat la eseuri video și analize cadru cu cadru.</dd>
+                        <dt>Abonamentul "Critic"</dt>
+                        <dd>Include invitații la avanpremierele de presă din București.</dd>
+                    </dl>
+                </article>
+            </section>
+
+            <section id="zona-7" class="grid-item">
+                <h2>Ghidul Utilizatorului</h2>
+                <details>
+                    <summary>De ce diferă Z-Score de notele de pe Rotten Tomatoes?</summary>
+                    <p>Sistemul nostru elimină "review bombing-ul" prin verificarea biletelor și ponderarea recenziilor utilizatorilor vechi cu cele ale criticilor verificați.</p>
+                </details>
+                <details>
+                    <summary>Unde pot sugera un film pentru "Noaptea Nolan"?</summary>
+                    <p>Avem un canal dedicat pe serverul nostru de Discord, disponibil pentru membrii Premium.</p>
+                </details>
+            </section>
+
+            <section id="zona-8" class="grid-item">
+                <h2>Multimedia & Teasere</h2>
+                
+                <div id="stilizare-taburi">
+                    <nav class="tab-nav">
+                        <a href="https://www.youtube.com/embed/ulVSOghY-ns" target="ifr-video" class="tab-link">Interviu Regizor</a>
+                        <a href="https://www.youtube.com/embed/BmtceCYFpGo" target="ifr-video" class="tab-link">Behind the Scenes</a>
+                        <a href="https://www.youtube.com/embed/8Qn_spdM5Zg" target="ifr-video" class="tab-link">Teaser Oficial</a> 
+                    </nav>
+                    <div class="iframe-wrapper">
+                        <iframe name="ifr-video" src="https://www.youtube.com/embed/8Qn_spdM5Zg" title="Player Video Principal" allowfullscreen></iframe>
+                    </div>
+                </div>
+                
+                <div class="galerie-postere">
+                    <h3>Postere Oficiale</h3>
+                    <div class="container-postere">
+                        <a href="/resurse/imagini/poster3.jpg">
+                            <img src="/resurse/imagini/poster3.jpg" alt="Click pentru a mări posterul oficial">
+                        </a>
+                        <a href="/resurse/imagini/poster1.jpg">
+                            <img src="/resurse/imagini/poster1.jpg" alt="Click pentru a mări posterul oficial">
+                        </a>
+                        <a href="/resurse/imagini/poster2.jpg">
+                            <img src="/resurse/imagini/poster2.jpg" alt="Click pentru a mări posterul oficial">
+                        </a>
+                        <a href="/resurse/imagini/poster4.jpg">
+                            <img src="/resurse/imagini/poster4.jpg" alt="Click pentru a mări posterul oficial">
+                        </a>
+                    </div>
+                </div>
+                  <video class="video-prezentare" controls poster="/resurse/imagini/poster-video.jpg" preload="auto">
+                    <source src="/resurse/video/film.mp4" type="video/mp4">
+                    <source src="/resurse/video/film.webm" type="video/webm">
+                    <track src="/resurse/vtt/ro.vtt" kind="subtitles" srclang="ro" label="Română" default>
+                    <track src="/resurse/vtt/en.vtt" kind="subtitles" srclang="en" label="English">
+                    
+                     Mesaj de rezervă: Browserul tău nu suportă elementul video.
+                  </video>
+            </section>
+
+        </div>
+    </main>
+
+   <%- include("../fragmente/footer") %>
+</body>
+</html>

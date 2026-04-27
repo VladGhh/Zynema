@@ -4,6 +4,7 @@ const fs=require("fs");
 const path= require("path");
 const sass= require("sass");
 const sharp=require("sharp");
+const pg=require("pg");
 
 app= express();
 app.set("view engine", "ejs")
@@ -23,6 +24,22 @@ console.log("Cale fisier", __filename);
 app.get("/favicon.ico", function(req, res) {
    
     res.sendFile(path.join(__dirname, "resurse/ico/favicon.ico"));
+});
+
+client = new pg.Client({
+    database: "cti_2026",
+    user: "vlad",
+    password: "parola",
+    host: "localhost",
+    port: 5432,
+});
+client.connect()
+client.query("select * from prajituri where id>3",function(err, rez){
+    if (err){
+        console.log("Eroare", err);
+    }else{
+        console.log("Rezultat", rez.rows);
+    }
 });
 
 let vect_foldere=[ "temp", "logs", "backup", "fisiere_uploadate" ]
@@ -83,16 +100,55 @@ if (fs.existsSync(obGlobal.folderScss)) {
         }
     });
 }
+function initImagini() {
+    var continut = fs.readFileSync(path.join(__dirname, "resurse/json/galerie.json")).toString("utf-8");
+
+    obGlobal.obImagini = JSON.parse(continut);
+    let vImagini = obGlobal.obImagini.imagini;
+    let caleGalerie = obGlobal.obImagini.cale_galerie;
+
+    let caleAbs = path.join(__dirname, caleGalerie);
+    let caleAbsMediu = path.join(caleAbs, "mediu");
+    let caleAbsMic = path.join(caleAbs, "mic");
+    
+    if (!fs.existsSync(caleAbsMediu)) fs.mkdirSync(caleAbsMediu);
+    if (!fs.existsSync(caleAbsMic)) fs.mkdirSync(caleAbsMic);
+
+    for (let imag of vImagini) {
+        let [numeFis, ext] = imag.fisier_imagine.split("."); 
+        let caleFisAbs = path.join(caleAbs, imag.fisier_imagine);
+        
+        let caleFisMediuAbs = path.join(caleAbsMediu, numeFis + ".webp");
+        let caleFisMicAbs = path.join(caleAbsMic, numeFis + ".webp");
+
+        if (!fs.existsSync(caleFisMediuAbs)) {
+            sharp(caleFisAbs).resize(300).toFile(caleFisMediuAbs);
+        }
+        if (!fs.existsSync(caleFisMicAbs)) {
+            sharp(caleFisAbs).resize(150).toFile(caleFisMicAbs);
+        }
+
+        imag.fisier_mediu = "/" + caleGalerie + "/mediu/" + numeFis + ".webp";
+        imag.fisier_mic = "/" + caleGalerie + "/mic/" + numeFis + ".webp";
+        imag.fisier = "/" + caleGalerie + "/" + imag.fisier_imagine;
+    }
+}
+initImagini();
+
 app.get(["/","/index","/home"], function(req, res){
     res.render("pagini/index",{
-        ip:req.ip
+        ip:req.ip,
+        imagini:obGlobal.obImagini.imagini
     });
 });
 
 app.use("/resurse", express.static(path.join(__dirname, "resurse")));
+app.use("/dist", express.static(path.join(__dirname, "/node_modules/bootstrap/dist")));
+
 app.get("/favicon.ico", function(req, res){
     res.sendFile(path.join(__dirname,"resurse/ico/favicon.ico"))
 });
+
 
 function initErori(){
     let continut = fs.readFileSync(path.join(__dirname,"resurse/json/erori.json")).toString("utf-8");

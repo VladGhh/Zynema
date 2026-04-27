@@ -20,8 +20,10 @@
                     <h2>Bun venit în universul Zynema</h2>
                     <p>Sanctuarul cinefililor și al analizelor aprofundate</p>
                     <p>Arunca un ochi la arhiva noastra de genuri: <a href="#zona-5">Chiar Aici</a></p>
-                </hgroup>
+                </hgroup>  
                 <p>IP <%- locals.ip %></p> 
+                <h2 class="text-reflexie" data-text="Cinematografie">Cinematografie</h2>
+                <hr class="stil-personalizat">
                 <article>
                     <h3>Manifestul Nostru</h3>
                     <p>Pe platforma <b>Zynema</b> nu ne mulțumim doar cu simple impresii; disecăm cele mai noi <b>recenzii filme</b> și dezbatem <b>seriale</b> care redefinesc televiziunea modernă.</p>
@@ -97,22 +99,62 @@
                 </div>
             </section>
 
-            <section id="zona-3" class="grid-item">
-                <h2>Calendarul Comunității</h2>
-                <ol>
-                    <li><time datetime="2026-05-15T21:00">15 Mai, 21:00</time> - <b>Noaptea Nolan</b>. Vizionăm Interstellar și Inception în format IMAX 70mm.</li>
-                    <li><time datetime="2026-06-20T19:00">20 Iunie, 19:00</time> - <b>Gala Zynema Awards</b>. Decernăm premiile criticilor independenți.</li>
-                </ol>
-                <figure>
-                    <picture>
-                        <source media="(max-width: 600px)" srcset="/resurse/imagini/imax.jpg">
-                        <source media="(max-width: 1000px)" srcset="/resurse/imagini/imax.jpg">
-                        <img src="/resurse/imagini/imax.jpg" alt="Interiorul Sălii IMAX Zynema" title="Ecranul nostru de proiecție flagship">
-                    </picture>
-                    <figcaption>Sala VIP Zynema, pregătită pentru proiecția de gală.</figcaption>
+<section id="zona-3" class="grid-item">
+    <h2>Regizorii despre care discutăm astăzi</h2>
+    <div id="galerie-statica">
+        <% 
+      
+        let vectorZile = ["duminica", "luni", "marti", "miercuri", "joi", "vineri", "sambata"];
+        
+        let indexZiCurenta = new Date().getDay(); 
+
+        for (let imag of locals.imagini) { 
+            let afiseazaPoza = false;
+            
+            if (imag.intervale_zile) {
+                for (let interval of imag.intervale_zile) {
+                    let indexStart = vectorZile.indexOf(interval[0]); 
+                    let indexStop = vectorZile.indexOf(interval[1]);  
+                    
+                    if (indexStart <= indexStop) {
+                        // Interval normal (ex: luni - joi)
+                        if (indexZiCurenta >= indexStart && indexZiCurenta <= indexStop) {
+                            afiseazaPoza = true;
+                            break;
+                        }
+                    } else {
+                        // Interval peste weekend (ex: vineri - marti)
+                        if (indexZiCurenta >= indexStart || indexZiCurenta <= indexStop) {
+                            afiseazaPoza = true;
+                            break;
+                        }
+                    }
+                }
+            } else {
+                afiseazaPoza = true;
+            }
+                                           
+            if(afiseazaPoza){
+        %>
+                <figure title="<%= imag.descriere_poza %>">
+                    <picture> 
+                        <source srcset="<%= imag.fisier_mic %>" media="(max-width: 300px)">
+                        <source srcset="<%= imag.fisier_mediu %>" media="(max-width: 1200px)">
+                        <img src="<%= imag.fisier %>" alt="<%= imag.continut_alternativ || imag.nume_poza %>">
+                    </picture> 
+                    
+                    <figcaption>
+                        <span class="index"></span> 
+                        <strong><%= imag.nume_poza %></strong> <br>
+                        <small><%= imag.descriere_poza %></small>
+                    </figcaption>
                 </figure>
-                <p>Bilete vândute pentru Noaptea Nolan: <meter min="0" max="100" low="30" high="90" optimum="50" value="95">95%</meter></p>
-            </section>
+        <% 
+            } 
+        } 
+        %>
+    </div>
+</section>
 
             <section id="zona-4" class="grid-item">
                 <h2>Știri de pe Platourile de Filmare</h2>
@@ -138,6 +180,9 @@
                         <li>The Florida Project</li>
                     </ul>
                 </section>
+                   <section id="sectiune-duotone">
+                    <div id="efect-duotone"></div>
+                   </section>
             </section>
 
             <section id="zona-6" class="grid-item">
@@ -183,22 +228,34 @@
                     </div>
                 </div>
                 
-                <div class="galerie-postere">
-                    <h3>Postere Oficiale</h3>
-                    <div class="container-postere">
-                        <a href="/resurse/imagini/poster3.jpg">
-                            <img src="/resurse/imagini/poster3.jpg" alt="Click pentru a mări posterul oficial">
-                        </a>
-                        <a href="/resurse/imagini/poster1.jpg">
-                            <img src="/resurse/imagini/poster1.jpg" alt="Click pentru a mări posterul oficial">
-                        </a>
-                        <a href="/resurse/imagini/poster2.jpg">
-                            <img src="/resurse/imagini/poster2.jpg" alt="Click pentru a mări posterul oficial">
-                        </a>
-                        <a href="/resurse/imagini/poster4.jpg">
-                            <img src="/resurse/imagini/poster4.jpg" alt="Click pentru a mări posterul oficial">
-                        </a>
-                    </div>
+               <div class="container my-5 galerie-postere-bootstrap">
+                        <h3 class="titlu-galerie">Postere Oficiale</h3>
+                        
+                        <div class="row g-2 g-md-4">
+                            <div class="col-6 col-md-6 col-lg-3">
+                                <a href="/resurse/imagini/poster3.jpg" class="poster-link">
+                                    <img src="/resurse/imagini/poster3.jpg" class="img-fluid poster-img" alt="Poster oficial">
+                                </a>
+                            </div>
+
+                            <div class="col-6 col-md-6 col-lg-3">
+                                <a href="/resurse/imagini/poster1.jpg" class="poster-link">
+                                    <img src="/resurse/imagini/poster1.jpg" class="img-fluid poster-img" alt="Poster oficial">
+                                </a>
+                            </div>
+
+                            <div class="col-6 col-md-6 col-lg-3">
+                                <a href="/resurse/imagini/poster2.jpg" class="poster-link">
+                                    <img src="/resurse/imagini/poster2.jpg" class="img-fluid poster-img" alt="Poster oficial">
+                                </a>
+                            </div>
+
+                            <div class="col-6 col-md-6 col-lg-3">
+                                <a href="/resurse/imagini/poster4.jpg" class="poster-link">
+                                    <img src="/resurse/imagini/poster4.jpg" class="img-fluid poster-img" alt="Poster oficial">
+                                </a>
+                            </div>
+                        </div>
                 </div>
                   <video class="video-prezentare" controls poster="/resurse/imagini/poster-video.jpg" preload="auto">
                     <source src="/resurse/video/film.mp4" type="video/mp4">

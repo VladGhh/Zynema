@@ -1,0 +1,117 @@
+{
+    "cale_galerie": "resurse/imagini/galerie",
+    "imagini": [
+        {
+            "fisier_imagine": "Nolan.png",
+            "nume_poza": "Christopher Nolan",
+            "continut_alternativ": "Portretul regizorului Christopher Nolan",
+            "descriere_poza": "I think audiences get too comfortable and familiar in today's movies. They believe everything they're hearing and seeing. I like to shake that up.",
+            "intervale_zile": [["luni", "miercuri"], ["sambata", "sambata"]]
+        },
+        {
+            "fisier_imagine": "Lynch.png",
+            "nume_poza": "David Lynch",
+            "continut_alternativ": "Portretul regizorului David Lynch",
+            "descriere_poza": "I don't think about technique. The ideas dictate everything. You have to be true to that or you're dead.",
+            "intervale_zile": [["joi", "vineri"], ["sambata", "sambata"]]
+        },
+        {
+            "fisier_imagine": "Kubrick.png",
+            "nume_poza": "Stanley Kubrick",
+            "continut_alternativ": "Portretul regizorului Stanley Kubrick",
+            "descriere_poza": "If it can be written, or thought, it can be filmed.",
+            "intervale_zile": [["luni", "vineri"]]
+        },
+        {
+            "fisier_imagine": "Tarantino.png",
+            "nume_poza": "Quentin Tarantino",
+            "continut_alternativ": "Portretul regizorului Quentin Tarantino",
+            "descriere_poza": "I don't believe in elitism. I don't think the audience is this dumb person lower than me. I am the audience.",
+            "intervale_zile": [["joi", "sambata"]]
+        },
+        {
+            "fisier_imagine": "Scorsese.png",
+            "nume_poza": "Martin Scorsese",
+            "continut_alternativ": "Portretul regizorului Martin Scorsese",
+            "descriere_poza": "Cinema is a matter of what's in the frame and what's out.",
+            "intervale_zile": [["luni", "miercuri"], ["vineri", "sambata"]]
+        },
+        {
+            "fisier_imagine": "Hooper.png",
+            "nume_poza": "Tom Hooper",
+            "continut_alternativ": "Portretul regizorului Tom Hooper",
+            "descriere_poza": "A lot of the time when you shoot, you are pained. It is quite masochistic – you have to be in touch with your unhappiness because that is part of the early radar system that tells you when something isn't working",
+            "intervale_zile": [["marti", "marti"], ["duminica", "duminica"]]
+        },
+        {
+            "fisier_imagine": "Burton.png",
+            "nume_poza": "Tim Burton",
+            "continut_alternativ": "Portretul regizorului Tim Burton",
+            "descriere_poza": "I've always loved the idea of fairy tales, but somehow I never managed to completely connect with them. What interests me is taking those classic images and themes and trying to contemporize them a bit. I believe folk tales and fairy tales have some sort of psychological foundation that makes that possible.",
+            "intervale_zile": [["miercuri", "vineri"]]
+        },
+        {
+            "fisier_imagine": "Spielberg.png",
+            "nume_poza": "Steven Spielberg",
+            "continut_alternativ": "Portretul regizorului Steven Spielberg",
+            "descriere_poza": "I think that the Internet is going to effect the most profound change on the entertainment industries combined. And we're all gonna be tuning into the most popular Internet show in the world, which will be coming from some place in Des Moines. We're all gonna lose our jobs. We're all gonna be on the Internet trying to find an audience.",
+            "intervale_zile": [["luni", "marti"], ["sambata", "duminica"]]
+        },
+        {
+            "fisier_imagine": "Denis.png",
+            "nume_poza": "Claire Denis",
+            "continut_alternativ": "Portretul regizoarei Claire Denis",
+            "descriere_poza": "Even if it's the dream of a voyage, I think it was very important for me that the film offer the two sides of the globe",
+            "intervale_zile": [["marti", "joi"]]
+        },
+        {
+            "fisier_imagine": "Akerman.png",
+            "nume_poza": "Chantal Akerman",
+            "continut_alternativ": "Portretul regizoarei Chantal Akerman",
+            "descriere_poza": "When people ask me if I am a feminist film maker, I reply I am a woman and I also make films.",
+            "intervale_zile": [["vineri", "duminica"]]
+        },
+        {
+            "fisier_imagine": "Jodorowsky.png",
+            "nume_poza": "Alejandro Jodorowsky",
+            "continut_alternativ": "Portretul regizorului Alejandro Jodorowsky",
+            "descriere_poza": "One does not go to the theater to escape from himself, but to reestablish contact with the mystery that we all are.",
+            "intervale_zile": [["luni", "luni"], ["miercuri", "joi"]]
+        },
+        {
+            "fisier_imagine": "Varda.png",
+            "nume_poza": "Agnes Varda",
+            "continut_alternativ": "Portretul regizoarei Agnes Varda",
+            "descriere_poza": "I'm not interested in seeing a film just made by a woman - not unless she is looking for new images",
+            "intervale_zile": [["marti", "miercuri"], ["sambata", "sambata"]]
+        },
+        {
+            "fisier_imagine": "Kurosawa.png",
+            "nume_poza": "Akira Kurosawa",
+            "continut_alternativ": "Portretul regizorului Akira Kurosawa",
+            "descriere_poza": "Movie directors, or should I say people who create things, are very greedy and they can never be satisfied...that's why they can keep on working. I've been able to work for so long because I think next time, I'll make something good.",
+            "intervale_zile": [["joi", "vineri"], ["duminica", "duminica"]]
+        },
+        {
+            "fisier_imagine": "Anderson.png",
+            "nume_poza": "Wes Anderson",
+            "continut_alternativ": "Portretul regizorului Wes Anderson",
+            "descriere_poza": "I know that feeling of looking back and thinking, that part I'd like to fix. So I obsessively try not to compromise.",
+            "intervale_zile": [["luni", "marti"], ["vineri", "vineri"]]
+        },
+        {
+            "fisier_imagine": "Tarkovsky.png",
+            "nume_poza": "Andrei Tarkovsky",
+            "continut_alternativ": "Portretul regizorului Andrei Tarkovsky",
+            "descriere_poza": "Juxtaposing a person with an environment that is boundless, collating him with a countless number of people passing by close to him and far away, relating a person to the whole world, that is the meaning of cinema",
+            "intervale_zile": [["miercuri", "sambata"]]
+        },
+        {
+            "fisier_imagine": "Selick.png",
+            "nume_poza": "Henry Selick",
+            "continut_alternativ": "Portretul regizorului Henry Selick",
+            "descriere_poza": "There s invention every day. Every day it’s like a feast. It’s very grueling, it’s very demanding. Puppets seem like vampires sometimes. They live, and you’re depleted.",
+            "intervale_zile": [["marti", "joi"], ["duminica", "duminica"]]
+        }
+    ]
+}

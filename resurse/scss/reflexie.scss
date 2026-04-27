@@ -1,0 +1,29 @@
+.text-reflexie {
+    position: relative;
+    display: inline-block !important; 
+    width: fit-content !important; 
+    color: #cc0000; 
+    white-space: nowrap; 
+    text-decoration: none !important;
+    transform: rotate(-15deg);
+    transition: color 0.5s ease;
+
+    &::after {
+        content: attr(data-text); 
+        position: absolute;
+        top: 60px; 
+        left: calc(100% + 50px); 
+        transform-origin: center;
+        transform: rotate(30deg) scaleX(-1);
+        color: #cc0000;
+        transition: color 0.5s ease;
+    }
+
+    &:hover {
+        color: #aaaaaa; 
+        
+        &::after {
+            color: #aaaaaa; 
+        }
+    }
+}

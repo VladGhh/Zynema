@@ -64,7 +64,7 @@ main {
         "z1 z1 z1 z1 z1"
         "z2 z2 z8 z8 z8"
         "z5 z6 z8 z8 z8"
-        "z4 z4 z3 z3 z7";
+        "z4 z3 z3 z3 z7";
 }
 
 #zona-1 { grid-area: z1; } #zona-2 { grid-area: z2; } #zona-3 { grid-area: z3; }
@@ -193,7 +193,74 @@ video::cue {
     color: transparent;
     background-color: transparent; 
 }
+hr.stil-personalizat {
+    
+    height: 4px;
+    width: 80%; 
+    margin: 40px auto; 
+    
+    
+    background-color: var(--culoare-accent); 
+    
+    
+    border: none; 
+    
+    
+    border-left: 40px solid var(--culoare-accent); /* Triunghiul din stânga */
+    border-right: 40px solid var(--culoare-accent); /* Triunghiul din dreapta */
+    
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
 
+    background-clip: padding-box; /* Asigurăm că culoarea de fundal nu se extinde în zonele transparente */
+    
+    box-sizing: content-box; 
+}
+#efect-duotone {
+    position: relative;
+    background-image: url("/resurse/imagini/arhiva.png");
+    
+    background-color: var(--culoare-secundara); 
+    
+    background-size: contain; 
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 250px; 
+    height: 250px;
+    
+    filter: brightness(100%) grayscale(0%); 
+    transition: all 1s linear; 
+}
+
+#efect-duotone:after, #efect-duotone:before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 1; 
+    transition: all 1s linear; 
+}
+
+#efect-duotone:after {
+    background-color: magenta; 
+    mix-blend-mode: lighten;
+}
+
+#efect-duotone:before {
+    background-color: cyan; 
+    mix-blend-mode: darken;
+}
+
+#efect-duotone:hover {
+    filter: brightness(100%) grayscale(100%);
+}
+
+#efect-duotone:hover:after, #efect-duotone:hover:before {
+   
+    opacity: 0;
+}
 @media screen and (max-width: 1200px) {
     html { font-size: 14px; }
     :root { --margine-pagina: 40px; }

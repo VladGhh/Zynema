@@ -1,0 +1,35 @@
+@use "../../node_modules/bootstrap/scss/bootstrap" with (
+    $primary: lightblue, 
+    $secondary: #457b9d,
+    $body-color: #2b2d42,
+    $grid-breakpoints: (
+        xs: 0,
+        sm: 576px,
+        md: 820px, 
+        lg: 1100px,
+        xl: 1200px,
+        xxl: 1400px
+    ),
+    $border-radius: 20px,
+    $font-family-sans-serif: ("Verdana", "Tahoma", sans-serif),
+    $spacer: 1.5rem,
+    $enable-shadows: true
+);
+
+h1 { font-size: 3.5rem; }
+h2 { font-size: 2.8rem; }
+
+.poster-img {
+    width: 100%;
+    aspect-ratio: 2/3;
+    object-fit: cover;
+    border-radius: var(--bs-border-radius);
+    border: 2px solid var(--bs-secondary);
+    transition: all 0.3s ease;
+}
+
+.poster-link:hover .poster-img {
+    border-color: var(--bs-primary) !important;
+    box-shadow: 0 0 20px rgba(255, 192, 203, 0.7) !important;
+    transform: scale(1.02);
+}
